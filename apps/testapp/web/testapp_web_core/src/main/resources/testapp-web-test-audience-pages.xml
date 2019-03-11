@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="testAppPageBase" class="com.oracle.auto.testapp.web.ancestor.TestAppPageBase" abstract="true">
+    </bean>
+
+
+    <bean id="audienceMainPage" class="com.oracle.auto.testapp.web.pages.AudiencePages.AudienceMainPage" parent="testAppPageBase" scope="prototype">
+         <property name="newBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${audience.main.page.search}"/>
+            </bean>
+        </property>
+        <property name="fieldDetails">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${audience.main.page.new.field.details.input.box}"/>
+            </bean>
+        </property>
+        <property name="exceptedField">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${audience.main.page.new.field.details.excepted.field}"/>
+            </bean>
+        </property>
+        <property name="listedFields">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${audience.main.page.new.field.details.listed.fields}"/>
+            </bean>
+        </property>
+        <property name="emailAddress">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${audience.main.page.new.field.details.email.address}"/>
+            </bean>
+        </property>
+        <property name="createBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${audience.main.page.new.field.details.create.btn}"/>
+            </bean>
+        </property>
+
+        <property name="firstName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLLabel">
+                <constructor-arg name="locator" value="${audience.main.page.contact.first.name}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+    <bean id="contactsMainPage" class="com.oracle.auto.testapp.web.pages.AudiencePages.ContactsMainPage" parent="testAppPageBase" scope="prototype">
+        <property name="popUpMessage">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${audience.main.page.popUp.Ok.btn}"/>
+            </bean>
+        </property>
+        <property name="search">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${audience.main.page.search}"/>
+            </bean>
+        </property>
+        <property name="status">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${audience.main.page.status}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+</beans>

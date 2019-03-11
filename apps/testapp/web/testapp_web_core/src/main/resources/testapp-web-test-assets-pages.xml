@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="testAppPageBase" class="com.oracle.auto.testapp.web.ancestor.TestAppPageBase" abstract="true">
+    </bean>
+
+
+    <bean id="landingPageConPage" class="com.oracle.auto.testapp.web.pages.AssetsPages.LandingPageConPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="serviceOpenID">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.service.openID}"/>
+            </bean>
+        </property>
+        <property name="cloudContact">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.btn}"/>
+            </bean>
+        </property>
+        <property name="form">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.from.btn}"/>
+            </bean>
+        </property>
+        <property name="searchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.search.input.box}"/>
+            </bean>
+        </property>
+        <property name="exceptedIssues">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.excepted.issue.title}"/>
+            </bean>
+        </property>
+        <property name="closeCloudContentBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.close.btn}"/>
+            </bean>
+        </property>
+        <property name="listedIssues">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.listed.issues}"/>
+            </bean>
+        </property>
+        <property name="drawingArea">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.drawing.area}"/>
+            </bean>
+        </property>
+        <property name="domainArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.domain.arrow}"/>
+            </bean>
+        </property>
+        <property name="cloudContentRegistrationIssue">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.registration.issue}"/>
+            </bean>
+        </property>
+        <property name="formIssue">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.form.issue}"/>
+            </bean>
+        </property>
+        <property name="cloudContentJSIssue">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.JS.issue}"/>
+            </bean>
+        </property>
+        <property name="domainInputBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.domain.input.box}"/>
+            </bean>
+        </property>
+        <property name="exceptedDomain">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.excepted.domain}"/>
+            </bean>
+        </property>
+        <property name="domainLists">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.domain.lists}"/>
+            </bean>
+        </property>
+        <property name="vanityURL">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.vanity.url}"/>
+            </bean>
+        </property>
+        <property name="contentURL">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.url}"/>
+            </bean>
+        </property>
+        <property name="landingPageURL">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.url}"/>
+            </bean>
+        </property>
+        <property name="saveLPBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.save.LP.btn}"/>
+            </bean>
+        </property>
+        <property name="inputLPName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.popup.input.LP.name}"/>
+            </bean>
+        </property>
+        <property name="saveLPNameBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.page.cloud.content.popup.save.btn}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="landingPageMainPage" class="com.oracle.auto.testapp.web.pages.AssetsPages.LandingPageMainPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="createLandingPageBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.create.landing.page}"/>
+            </bean>
+        </property>
+        <property name="createHTMLLPBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.popup.create.HTML.page}"/>
+            </bean>
+        </property>
+        <property name="createBlankLPBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.popup.create.blank.page}"/>
+            </bean>
+        </property>
+        <property name="chooseBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.popup.choose.btn}"/>
+            </bean>
+        </property>
+    </bean>
+
+     <bean id="registrationServiceLandingPage" class="com.oracle.auto.testapp.web.pages.AssetsPages.RegistrationServiceLandingPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="formBodyLink">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.registration.form.link}"/>
+            </bean>
+        </property>
+        <property name="formBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.registration.form.box}"/>
+            </bean>
+        </property>
+        <property name="formInputBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.landing.main.page.registration.form.input.box}"/>
+            </bean>
+        </property>
+        <property name="exceptedForm">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.registration.exceptd.form}"/>
+            </bean>
+        </property>
+        <property name="formLists">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.registration.form.lists}"/>
+            </bean>
+        </property>
+        <property name="openIDArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.registration.openID.arrow}"/>
+            </bean>
+        </property>
+        <property name="exceptedFormContent">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.registration.excepted.form.content}"/>
+            </bean>
+        </property>
+        <property name="formContents">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.registration.form.contents}"/>
+            </bean>
+        </property>
+        <property name="saveBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.registration.form.save.btn}"/>
+            </bean>
+        </property>
+        <property name="closeBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.registration.form.close.btn}"/>
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id="jsGeneratorLandingPage" class="com.oracle.auto.testapp.web.pages.AssetsPages.JSGeneratorLandingPage"
+          parent="testAppPageBase" scope="prototype">
+
+        <property name="openIDArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.JS.generator.openID.arrow}"/>
+            </bean>
+        </property>
+        <property name="nickNameArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.JS.generator.nick.name.arrow}"/>
+            </bean>
+        </property>
+        <property name="formContentLists">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.JS.generator.form.content.lists}"/>
+            </bean>
+        </property>
+        <property name="exceptedFormContent">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.JS.generator.excepted.form.content}"/>
+            </bean>
+        </property>
+        <property name="saveBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.JS.generator.save.btn}"/>
+            </bean>
+        </property>
+        <property name="closeBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.landing.main.page.JS.generator.close.btn}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="emailsMainPage" class="com.oracle.auto.testapp.web.pages.AssetsPages.EmailsMainPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="createEmailBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.main.page.create.emails.btn}"/>
+            </bean>
+        </property>
+        <property name="designEmailLink">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.main.page.design.email.link}"/>
+            </bean>
+        </property>
+        <property name="blankEmailBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.main.page.popup.create.blank.email.btn}"/>
+            </bean>
+        </property>
+        <property name="chooseBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.main.page.popup.choose.btn}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="emailsPageConPage" class="com.oracle.auto.testapp.web.pages.AssetsPages.EmailsPageConPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="cloudContact">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.btn}"/>
+            </bean>
+        </property>
+        <property name="searchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.search.input.box}"/>
+            </bean>
+        </property>
+        <property name="exceptedIssues">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.excepted.issue.title}"/>
+            </bean>
+        </property>
+        <property name="listedIssues">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.listed.issues}"/>
+            </bean>
+        </property>
+        <property name="drawingArea">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.drawing.area}"/>
+            </bean>
+        </property>
+        <property name="saveEmailBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.save.btn}"/>
+            </bean>
+        </property>
+        <property name="inputEmailName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.popup.input.email.name}"/>
+            </bean>
+        </property>
+        <property name="emailSubject">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.email.subject}"/>
+            </bean>
+        </property>
+
+        <property name="element">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.element}"/>
+            </bean>
+        </property>
+
+        <property name="textBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.text.btn}"/>
+            </bean>
+        </property>
+        <property name="textElement">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.text.element}"/>
+            </bean>
+        </property>
+
+        <property name="savePopupEmailName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.popup.save.btn}"/>
+            </bean>
+        </property>
+
+        <property name="emailGroupBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.email.group.btn}"/>
+            </bean>
+        </property>
+        <property name="emailGroupLists">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.email.group.lists}"/>
+            </bean>
+        </property>
+        <property name="emailGroupName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.cloud.content.email.group.name}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="emailQRCodeServicePage" class="com.oracle.auto.testapp.web.pages.AssetsPages.EmailQRCodeServicePage"
+          parent="testAppPageBase" scope="prototype">
+
+        <property name="QRCodeName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.QRCode.name}"/>
+            </bean>
+        </property>
+
+        <property name="accounts">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.account.select}"/>
+            </bean>
+        </property>
+
+        <property name="selectedAccount">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.account.second}"/>
+            </bean>
+        </property>
+        <property name="richMediaMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.rich.media.message}"/>
+            </bean>
+        </property>
+        <property name="welcomeMsgEnableBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.msg.enable.btn}"/>
+            </bean>
+        </property>
+        <property name="disabledStatus">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${assets.emails.page.QRCode.service.content.msg.disable.status.flag}"/>
+            </bean>
+        </property>
+        <property name="enableStatus">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.msg.enable.status}"/>
+            </bean>
+        </property>
+        <property name="disableStatus">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${assets.emails.page.QRCode.service.content.msg.disable.status}"/>
+            </bean>
+        </property>
+        <property name="textMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.text.message}"/>
+            </bean>
+        </property>
+        <property name="textArea">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.text.textarea}"/>
+            </bean>
+        </property>
+        <property name="hiddenTextBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.hidden.text.box}"/>
+            </bean>
+        </property>
+        <property name="richMediaMsgTitle">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.rich.media.title}"/>
+            </bean>
+        </property>
+        <property name="richMediaMsgTitles">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.rich.media.titles}"/>
+            </bean>
+        </property>
+        <property name="textSubmitBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.text.submit}"/>
+            </bean>
+        </property>
+
+        <property name="closeBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.close}"/>
+            </bean>
+        </property>
+
+        <property name="compactBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.compact}"/>
+            </bean>
+        </property>
+        <property name="mediumBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.medium}"/>
+            </bean>
+        </property>
+        <property name="notableBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.notable}"/>
+            </bean>
+        </property>
+        <property name="nextBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.next}"/>
+            </bean>
+        </property>
+        <property name="listItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.list.items}"/>
+            </bean>
+        </property>
+        <property name="officalAccount">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${assets.emails.page.QRCode.service.content.official.account}"/>
+            </bean>
+        </property>
+    </bean>
+
+
+
+</beans>

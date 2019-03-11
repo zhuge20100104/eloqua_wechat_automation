@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mobileScreenBase" class="com.oracle.auto.testapp.mobile.ancestor.MobileScreenBase" abstract="true">
+    </bean>
+
+    <bean id="mobileNativeScreenBase" class="com.oracle.auto.testapp.mobile.ancestor.MobileNativeScreenBase"
+          abstract="true">
+    </bean>
+
+    <bean id="homeScreen" class="com.oracle.auto.testapp.mobile.screens.wechat.HomeScreen"
+          parent="mobileNativeScreenBase"
+          scope="prototype">
+        <property name="oraAccount">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.oracle.account}"/>
+            </bean>
+        </property>
+        <property name="topRightOptions">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.top.right.options}"/>
+            </bean>
+        </property>
+        <property name="scanBtn">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.top.right.options.scan.button}"/>
+            </bean>
+        </property>
+        <property name="unfollow">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.item.menus.unfollow}"/>
+            </bean>
+        </property>
+        <property name="confirm">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.item.menus.unfollow.confirm}"/>
+            </bean>
+        </property>
+        <property name="back">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.item.menus.unfollow.back}"/>
+            </bean>
+        </property>
+        <property name="backPrevious">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.item.menus.unfollow.back.previous}"/>
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id="oraAccountScreen" class="com.oracle.auto.testapp.mobile.screens.wechat.OraAccountScreen"
+          parent="mobileNativeScreenBase"
+          scope="prototype">
+
+        <property name="messageBtn">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${oracle.account.screen.message}"/>
+            </bean>
+        </property>
+
+        <property name="messageField">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeTextField">
+                <constructor-arg name="locator" value="${oracle.account.screen.message.field}"/>
+            </bean>
+        </property>
+
+        <property name="sendBtn">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${oracle.account.screen.message.send.button}"/>
+            </bean>
+        </property>
+
+        <property name="richMessage">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${oracle.account.screen.rich.media.message.title}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+    <bean id="scanScreen" class="com.oracle.auto.testapp.mobile.screens.wechat.ScanScreen"
+          parent="mobileNativeScreenBase"
+          scope="prototype">
+        <property name="moreBtn">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.scan.more.option}"/>
+            </bean>
+        </property>
+        <property name="selectBtn">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.scan.more.option.image.library}"/>
+            </bean>
+        </property>
+        <property name="selectImage">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.scan.more.option.selected.image}"/>
+            </bean>
+        </property>
+        <property name="allImagesBtn">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.scan.all.images.button}"/>
+            </bean>
+        </property>
+        <property name="accountsImages">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.scan.all.images.account.images}"/>
+            </bean>
+        </property>
+        <property name="rdServiceAccount">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.scan.qrcodes.rdservice.account}"/>
+            </bean>
+        </property>
+        <property name="subscriptionAccount">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.scan.qrcodes.subscription.account}"/>
+            </bean>
+        </property>
+        <property name="clientServiceAccount">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.scan.qrcodes.client.service.account}"/>
+            </bean>
+        </property>
+        <property name="follow">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${wechat.scan.qrcodes.follow.button}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="openedPageScreen" class="com.oracle.auto.testapp.mobile.screens.wechat.OpenedPageScreen"
+          parent="mobileNativeScreenBase"
+          scope="prototype">
+
+        <property name="moreBtn">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${opened.web.page.screen.more.button}"/>
+            </bean>
+        </property>
+
+        <property name="copyLinkBtn">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${opened.web.page.screen.copy.link.button}"/>
+            </bean>
+        </property>
+
+        <property name="openInBrowser">
+            <bean class="com.oracle.auto.mobile.components.elements.nativeview.NativeButton">
+                <constructor-arg name="locator" value="${opened.web.page.screen.open.in.browser.button}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+</beans>

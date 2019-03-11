@@ -1,0 +1,2 @@
+eloqua-wechat-automation.git
+

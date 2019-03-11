@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="app-commons-properties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:app-commons-locator.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="loginPage" class="com.oracle.auto.apps.commons.LoginPage" scope="prototype">
+        <constructor-arg name="allowSingOut" value="true"/>
+    </bean>
+
+    <bean id="userNameTxt" class="com.oracle.auto.web.comp.html.HTMLTextbox" scope="prototype">
+        <constructor-arg name="locator" value="${loginpage.username.textbox}"/>
+    </bean>
+
+    <bean id="passwordTxt" class="com.oracle.auto.web.comp.html.HTMLTextbox" scope="prototype">
+        <constructor-arg name="locator" value="${loginpage.password.textbox}"/>
+    </bean>
+
+    <bean id="submitBtn" class="com.oracle.auto.web.comp.html.HTMLButton" scope="prototype">
+        <constructor-arg name="locator" value="${loginpage.submit.button}"/>
+    </bean>
+
+    <bean id="forgotPwdBtnLink" class="com.oracle.auto.web.comp.html.HTMLButton" scope="prototype">
+        <constructor-arg name="locator" value="${loginpage.forgotpassword.link}"/>
+    </bean>
+
+    <bean id="errorMsg" class="com.oracle.auto.web.comp.html.HTMLParagraph" scope="prototype">
+        <constructor-arg name="locator" value="${loginpage.errorMessage}"/>
+    </bean>
+
+    <bean id="oktaUserNameTxt" class="com.oracle.auto.web.comp.html.HTMLTextbox" scope="prototype">
+        <constructor-arg name="locator" value="${oktaLoginPage.oktaUserNameTxt.textbox}"/>
+    </bean>
+
+    <bean id="oktaPasswordTxt" class="com.oracle.auto.web.comp.html.HTMLTextbox" scope="prototype">
+        <constructor-arg name="locator" value="${oktaLoginPage.oktaPasswordTxt.textbox}"/>
+    </bean>
+
+    <bean id="oktaSignInBtn" class="com.oracle.auto.web.comp.html.HTMLButton" scope="prototype">
+        <constructor-arg name="locator" value="${oktaLoginPage.oktaSignInBtn.button}"/>
+    </bean>
+
+    <bean id="optionText" class="com.oracle.auto.web.comp.html.HTMLDiv" scope="prototype">
+        <constructor-arg name="locator" value="${select.option.text}"/>
+    </bean>
+
+    <bean id="selectedItem" class="com.oracle.auto.web.comp.html.HTMLSpan" scope="prototype">
+        <constructor-arg name="locator" value="${selected.item}"/>
+    </bean>
+
+    <bean id="selectIcon" class="com.oracle.auto.web.comp.html.HTMLSpan" scope="prototype">
+        <constructor-arg name="locator" value="${select.icon}"/>
+    </bean>
+
+    <bean id="openMenu" class="com.oracle.auto.web.comp.html.HTMLDiv" scope="prototype">
+        <constructor-arg name="locator" value="${mdMenu.openMenu}"/>
+    </bean>
+
+    <bean id="mdMenuSelectedItem" class="com.oracle.auto.web.comp.html.HTMLSpan" scope="prototype">
+        <constructor-arg name="locator" value="${mdMenu.selectedItem}"/>
+    </bean>
+
+    <bean id="menuItemBtn" class="com.oracle.auto.web.comp.html.HTMLButton" scope="prototype">
+        <constructor-arg name="locator" value="${mdMenu.menuItem.button}"/>
+    </bean>
+
+    <bean id="menuItemName" class="com.oracle.auto.web.comp.html.HTMLSpan" scope="prototype">
+        <constructor-arg name="locator" value="${mdMenu.menuItem.name}"/>
+    </bean>
+
+    <bean id="menuItemSelect" class="com.oracle.auto.web.comp.html.HTMLDiv" scope="prototype">
+        <constructor-arg name="locator" value="${mdMenu.menuItem.select}"/>
+    </bean>
+
+    <bean id="tooltipLabel" class="com.oracle.auto.web.comp.html.HTMLSpan" scope="prototype">
+        <constructor-arg name="locator" value="${mdToolTip.tooltipLabel}"/>
+    </bean>
+
+    <bean id="selectedDate" class="com.oracle.auto.web.comp.html.HTMLSpan" scope="prototype">
+        <constructor-arg name="locator" value="${datePicker.selectedDate}"/>
+    </bean>
+
+    <context:annotation-config/>
+</beans>

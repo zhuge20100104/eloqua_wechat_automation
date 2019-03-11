@@ -1,0 +1,7 @@
+chromeOptions: {
+    prefs: {
+        profile: {
+            password_manager_enabled: false
+        }
+    }
+}

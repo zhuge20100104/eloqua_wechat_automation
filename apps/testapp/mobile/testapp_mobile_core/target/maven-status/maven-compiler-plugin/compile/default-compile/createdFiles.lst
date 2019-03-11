@@ -1,0 +1,12 @@
+com\oracle\auto\testapp\mobile\pages\AuthorizeConfirmPage.class
+com\oracle\auto\testapp\mobile\ancestor\MobileNativeScreenBase.class
+com\oracle\auto\testapp\mobile\ancestor\MobileWebScreenBase.class
+com\oracle\auto\testapp\mobile\pages\LandingPage.class
+com\oracle\auto\testapp\mobile\screens\wechat\ScanScreen.class
+com\oracle\auto\testapp\mobile\tools\MobileDepository.class
+com\oracle\auto\testapp\mobile\screens\wechat\OraAccountScreen.class
+com\oracle\auto\testapp\mobile\screens\wechat\OpenedPageScreen.class
+com\oracle\auto\testapp\mobile\pages\MessagePage.class
+com\oracle\auto\testapp\mobile\screens\wechat\HomeScreen.class
+com\oracle\auto\testapp\mobile\pages\AuthorizeSuccessPage.class
+com\oracle\auto\testapp\mobile\ancestor\MobileScreenBase.class

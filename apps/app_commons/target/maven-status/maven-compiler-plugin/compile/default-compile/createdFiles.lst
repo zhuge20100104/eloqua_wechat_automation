@@ -1,0 +1,5 @@
+com\oracle\auto\apps\commons\LoginPage.class
+com\oracle\auto\apps\model\EmailData.class
+com\oracle\auto\apps\suites\AutoQEUiTestSuites.class
+com\oracle\auto\apps\commons\AppCommonPageBase.class
+com\oracle\auto\apps\commons\AppCommonPageAdaptor.class

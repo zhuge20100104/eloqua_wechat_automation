@@ -1,0 +1,3 @@
+com\oracle\auto\testapp\web\pages\TestAppMobileScreenFactory.class
+com\oracle\auto\testapp\web\pages\TestAppPageFactory.class
+com\oracle\auto\testapp\model\UserData.class

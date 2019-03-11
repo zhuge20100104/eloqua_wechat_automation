@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="testAppPageBase" class="com.oracle.auto.testapp.web.ancestor.TestAppPageBase" abstract="true">
+    </bean>
+
+    <bean id="googleHomePage" class="com.oracle.auto.testapp.web.pages.GoogleHomePage" parent="testAppPageBase" scope="prototype">
+        <property name="inputField">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${google.search.input}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="eloquaLogin" class="com.oracle.auto.testapp.web.pages.LoginPage" parent="testAppPageBase" scope="prototype">
+        <property name="companyName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${eloqua.login.company.name}"/>
+            </bean>
+        </property>
+        <property name="userName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${eloqua.login.user.name}"/>
+            </bean>
+        </property>
+        <property name="password">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${eloqua.login.password}"/>
+            </bean>
+        </property>
+        <property name="loginBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLButton">
+                <constructor-arg name="locator" value="${eloqua.login.button}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="weChatPlatformHomePage" class="com.oracle.auto.testapp.web.pages.WeChatPlatformHomePage" parent="testAppPageBase" scope="prototype">
+    </bean>
+
+    <bean id="eloquaHomePage" class="com.oracle.auto.testapp.web.pages.HomePage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="homeTopNavigator" ref="homeTopNavigator"/>
+
+        <property name="cloudAppBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.right.cloud.app.panel.btn}"/>
+            </bean>
+        </property>
+        <property name="cloudAPPCloseBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.right.cloud.app.panel.close.btn}"/>
+            </bean>
+        </property>
+        <property name="homeLogo">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.right.cloud.home.logo}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="campaignsPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.CampaignsPage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="topOptions" ref="topOptions"/>
+        <property name="leftNavigator" ref="leftNavigator"/>
+    </bean>
+
+
+
+    <bean id="templateChooserPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.TemplateChooserPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="blankCampaign">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${template.chooser.blank.campaign}"/>
+            </bean>
+        </property>
+        <property name="choose">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${template.chooser.bottom.choose}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="campaignEditorPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.CampaignEditorPage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="listedCampaignItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.editor.listed.items}"/>
+            </bean>
+        </property>
+        <property name="exceptedCampaignItem">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.editor.excepted.item}"/>
+            </bean>
+        </property>
+        <property name="output">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.editor.output}"/>
+            </bean>
+        </property>
+        <property name="input">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.editor.input}"/>
+            </bean>
+        </property>
+
+        <property name="listedDrawerItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.editor.drawer.listed.items}"/>
+            </bean>
+        </property>
+        <property name="exceptedDrawerItem">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.editor.drawer.excepted.items}"/>
+            </bean>
+        </property>
+
+        <property name="rightMenu">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.editor.right.menu}"/>
+            </bean>
+        </property>
+        <property name="saveBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.editor.top.right.save}"/>
+            </bean>
+        </property>
+        <property name="activateBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.editor.top.right.activate}"/>
+            </bean>
+        </property>
+        <property name="scrollComp">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.editor.scroll.component}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="segConfigurePage" class="com.oracle.auto.testapp.web.pages.CampaignPages.SegConfigurePage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="selectSegment">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${segment.configuration.select.segment}"/>
+            </bean>
+        </property>
+        <property name="selectedItem">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${segment.configuration.selected.item}"/>
+            </bean>
+        </property>
+
+        <property name="selectSegmentInput">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${segment.configuration.select.segment.input2}"/>
+            </bean>
+        </property>
+
+        <property name="listedSegmentItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${segment.configuration.select.segment.listed.segment.items}"/>
+            </bean>
+        </property>
+
+        <property name="exceptedSegment">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${segment.configuration.select.segment.excepted.segment}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="emailEditPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.EmailEditPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="allowEmailBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${email.configuration.select.email.allow.sending.email.box}"/>
+            </bean>
+        </property>
+        <property name="sendingOptionBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${email.configuration.select.email.sending.options.btn}"/>
+            </bean>
+        </property>
+
+        <property name="selectEmailInput">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${email.configuration.select.email.input}"/>
+            </bean>
+        </property>
+
+        <property name="listedEmailItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${email.configuration.select.email.listed.email.items}"/>
+            </bean>
+        </property>
+
+        <property name="exceptedEmail">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${email.configuration.select.email.excepted.email}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="contactInfoSyncConPage"
+                     class="com.oracle.auto.testapp.web.pages.CampaignPages.ContactInfoSyncConPage" parent="testAppPageBase"
+                     scope="prototype">
+    </bean>
+
+    <bean id="contactInfoSyncPage"
+          class="com.oracle.auto.testapp.web.pages.CampaignPages.ContactInfoSyncPage" parent="testAppPageBase"
+          scope="prototype">
+    </bean>
+
+
+    <bean id="messageSenderPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.MessageSenderPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="editBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${message.sender.configure}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="cloudActionConPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.CloudActionConPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="broadcastMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.broadcast.msg}"/>
+            </bean>
+        </property>
+        <property name="customerMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.customer.msg}"/>
+            </bean>
+        </property>
+
+
+        <property name="broadcastMsgCheckBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.broadcast.msg.check.box}"/>
+            </bean>
+        </property>
+
+        <property name="broadcastMsgSub">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.broadcast.msg.sub}"/>
+            </bean>
+        </property>
+
+        <property name="customerMsgSub">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.customer.msg.sub}"/>
+            </bean>
+        </property>
+
+        <property name="templateMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.template.msg}"/>
+            </bean>
+        </property>
+        <property name="tag">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.tag}"/>
+            </bean>
+        </property>
+        <property name="segment">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.segment}"/>
+            </bean>
+        </property>
+        <property name="allFollowers">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.all.followers}"/>
+            </bean>
+        </property>
+
+        <property name="allFollowersStatus">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.all.followers.status}"/>
+            </bean>
+        </property>
+
+        <property name="accounts">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${cloud.action.configuration.account.select}"/>
+            </bean>
+        </property>
+
+        <property name="selectedAccount">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${cloud.action.configuration.account.second}"/>
+            </bean>
+        </property>
+        <property name="richMediaMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.rich.media.message}"/>
+            </bean>
+        </property>
+        <property name="textMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.text.message}"/>
+            </bean>
+        </property>
+
+        <property name="ticketMedia">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${rich.media.message.send.settings.ticket}"/>
+            </bean>
+        </property>
+        <property name="ticketMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${cloud.action.configuration.ticket.message}"/>
+            </bean>
+        </property>
+        <property name="nextBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${cloud.action.configuration.next}"/>
+            </bean>
+        </property>
+        <property name="byPassBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${cloud.action.configuration.byPass}"/>
+            </bean>
+        </property>
+        <property name="listItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${cloud.action.configuration.listitems}"/>
+            </bean>
+        </property>
+        <property name="officalAccount">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${cloud.action.configuration.official.account}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="richMediaMessageConPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.RichMediaMessageConPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="mediaNews">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${rich.media.message.send.settings.medias}"/>
+            </bean>
+        </property>
+        <property name="mediaNewsSelected">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${rich.media.message.send.settings.medias.selected}"/>
+            </bean>
+        </property>
+
+        <property name="submitBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${rich.media.message.send.settings.submit}"/>
+            </bean>
+        </property>
+        <property name="successfulMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLValueDisplay">
+                <constructor-arg name="locator" value="${rich.media.message.send.settings.medias.successful.msg}"/>
+            </bean>
+        </property>
+        <property name="closeBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${rich.media.message.send.settings.close.button}"/>
+            </bean>
+        </property>
+        <property name="mediaNewsTitleLists">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${rich.media.message.send.settings.medias.title.lists}"/>
+            </bean>
+        </property>
+        <property name="exceptedMediaNewsTitle">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${rich.media.message.send.settings.medias.title}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="campaignTemplateMessageConPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.CampaignTemplateMessageConPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="searchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${template.message.send.settings.search.box}"/>
+            </bean>
+        </property>
+        <property name="inputBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${template.message.send.settings.input.box}"/>
+            </bean>
+        </property>
+        <property name="searchBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${template.message.send.settings.search.btn}"/>
+            </bean>
+        </property>
+
+        <property name="exceptedMessage">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${template.message.send.settings.excepted.message}"/>
+            </bean>
+        </property>
+        <property name="listedMessages">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${template.message.send.settings.search.listed.messages}"/>
+            </bean>
+        </property>
+        <property name="submitBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${template.message.send.settings.submit}"/>
+            </bean>
+        </property>
+        <property name="successfulMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLValueDisplay">
+                <constructor-arg name="locator" value="${template.message.send.settings.medias.successful.msg}"/>
+            </bean>
+        </property>
+        <property name="templateSelectedIcon">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${template.message.send.settings.template.selected}"/>
+            </bean>
+        </property>
+        <property name="closeBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${template.message.send.settings.close.button}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="messageConPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.MessageConPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="textArea">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${message.send.settings.textarea}"/>
+            </bean>
+        </property>
+        <property name="selectInsertMessageBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${message.send.settings.insert.message.box}"/>
+            </bean>
+        </property>
+        <property name="searchMessageBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${message.send.settings.search.message.box}"/>
+            </bean>
+        </property>
+        <property name="listedMessages">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${message.send.settings.listed.messages}"/>
+            </bean>
+        </property>
+        <property name="exceptedMessage">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${message.send.settings.excepted.message}"/>
+            </bean>
+        </property>
+        <property name="insertButton">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${message.send.settings.insert.button}"/>
+            </bean>
+        </property>
+        <property name="customerSubmitBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${message.send.settings.customer.submit}"/>
+            </bean>
+        </property>
+
+        <property name="broadcastSubmitBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${message.send.settings.broadcast.submit}"/>
+            </bean>
+        </property>
+
+        <property name="closeBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${message.send.settings.close}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="campaignChooserPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.CampaignChooserPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="campaignName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${campaign.chooser.campaign.name}"/>
+            </bean>
+        </property>
+        <property name="saveBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.chooser.save}"/>
+            </bean>
+        </property>
+        <property name="errorMsgBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaign.chooser.error.message.box}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="activateCampaignPage" class="com.oracle.auto.testapp.web.pages.CampaignPages.ActivateCampaignPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="activateBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${activate.campaign.activate}"/>
+            </bean>
+        </property>
+        <property name="activateConfirm">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${activate.campaign.activate.confirm}"/>
+            </bean>
+        </property>
+        <property name="contentsEnteredFlag">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${activate.campaign.activate.page.contacts.enter.flag}"/>
+            </bean>
+        </property>
+        <property name="countFlag">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${activate.campaign.activate.page.count.flag}"/>
+            </bean>
+        </property>
+        <property name="refreshBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${activate.campaign.activate.page.refresh.btn}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="settingsPage" class="com.oracle.auto.testapp.web.pages.SettingsPages.SettingsPage" parent="testAppPageBase" scope="prototype">
+        <property name="platformExtensions" ref="platformExtensions"/>
+
+    </bean>
+
+    <bean id="appCloudCatalogPage" class="com.oracle.auto.testapp.web.pages.SettingsPages.AppCloudCatalogPage" parent="testAppPageBase" scope="prototype">
+
+        <property name="searchInputBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.catalog.page.search.input.box}"/>
+            </bean>
+        </property>
+
+        <property name="searchInputText">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${app.cloud.catalog.page.search.input.textarea}"/>
+            </bean>
+        </property>
+
+        <property name="selectedApps">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.catalog.page.search.selected.apps}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="myAppsPage" class="com.oracle.auto.testapp.web.pages.SettingsPages.MyAppsPage" parent="testAppPageBase" scope="prototype">
+
+        <property name="configLink">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.settings.platform.extensions.apps.myapps.config}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="appConfigurationPage" class="com.oracle.auto.testapp.web.pages.SettingsPages.AppConfigurationPage" parent="testAppPageBase" scope="prototype">
+
+        <property name="addAccountButton">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.settings.platform.extensions.apps.myapps.config.configuration.add.account}"/>
+            </bean>
+        </property>
+        <property name="accounts">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.settings.platform.extensions.apps.myapps.config.configuration.accounts}"/>
+            </bean>
+        </property>
+        <property name="editButton">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.settings.platform.extensions.apps.myapps.config.configuration.edit.account}"/>
+            </bean>
+        </property>
+        <property name="deleteButton">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.settings.platform.extensions.apps.myapps.config.configuration.delete.account}"/>
+            </bean>
+        </property>
+
+        <property name="saveBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.settings.platform.extensions.apps.myapps.config.configuration.save.btn}"/>
+            </bean>
+        </property>
+        <property name="closeBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.settings.platform.extensions.apps.myapps.config.configuration.close.btn}"/>
+            </bean>
+        </property>
+        <property name="successfulMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.settings.platform.extensions.apps.myapps.config.configuration.successful.msg}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+    <bean id="deleteOfficialAccountPage" class="com.oracle.auto.testapp.web.pages.SettingsPages.DeleteOfficialAccountPage" parent="testAppPageBase" scope="prototype">
+
+        <property name="deleteBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.delete.btn}"/>
+            </bean>
+        </property>
+        <property name="alertWarning">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.alert.warning}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+    <bean id="officialAccountSettingPage" class="com.oracle.auto.testapp.web.pages.SettingsPages.OfficialAccountSettingPage" parent="testAppPageBase" scope="prototype">
+
+        <property name="authorizeButton">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.authorize}"/>
+            </bean>
+        </property>
+
+        <property name="openIDFieldDropdownList">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDropDownList">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.openIDBox}"/>
+            </bean>
+        </property>
+
+        <property name="defaultCampaignID">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.defaultCampaignID}"/>
+            </bean>
+        </property>
+        <property name="authorizedUsersBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.autherized.users.box}"/>
+            </bean>
+        </property>
+        <property name="selectedUserBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.selected.user.box}"/>
+            </bean>
+        </property>
+        <property name="advancedUserText">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.advanced.user.text}"/>
+            </bean>
+        </property>
+        <property name="settingLink">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.setting.link}"/>
+            </bean>
+        </property>
+        <property name="exceptedUser">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.excepted.user}"/>
+            </bean>
+        </property>
+        <property name="listedUsers">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.listd.users}"/>
+            </bean>
+        </property>
+        <property name="usersSearchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.users.search.box}"/>
+            </bean>
+        </property>
+        <property name="usersInputBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.users.input.box}"/>
+            </bean>
+        </property>
+        <property name="closeBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.close.btn}"/>
+            </bean>
+        </property>
+        <property name="saveBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.save.btn}"/>
+            </bean>
+        </property>
+        <property name="clearSelectedUsersBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${app.cloud.setting.platform.extensions.apps.myapps.config.configuration.official.account.setting.clear.selected}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+    <bean id="rightAppCloudPanelPage" class="com.oracle.auto.testapp.web.pages.MenuServicePages.RightAppCloudPanelPage" parent="testAppPageBase" scope="prototype">
+        <property name="weChatMessageBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${right.cloud.app.panel.weChat.message.btn}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+    <import resource="testapp-web-core-components.xml"/>
+    <import resource="testapp-web-test-service-pages.xml"/>
+    <import resource="testapp-web-test-audience-pages.xml"/>
+</beans>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mobileScreenBase" class="com.oracle.auto.testapp.mobile.ancestor.MobileScreenBase" abstract="true">
+    </bean>
+
+    <bean id="mobileWebScreenBase" class="com.oracle.auto.testapp.mobile.ancestor.MobileWebScreenBase" abstract="true">
+    </bean>
+
+    <bean id="landingPage" class="com.oracle.auto.testapp.mobile.pages.LandingPage" parent="mobileWebScreenBase"
+          scope="prototype">
+        <property name="firstName">
+            <bean class="com.oracle.auto.mobile.components.elements.webview.WebTextField">
+                <constructor-arg name="locator" value="${landing.page.first.name}"/>
+            </bean>
+        </property>
+        <property name="lastName">
+            <bean class="com.oracle.auto.mobile.components.elements.webview.WebTextField">
+                <constructor-arg name="locator" value="${landing.page.last.name}"/>
+            </bean>
+        </property>
+        <property name="emailAddress">
+            <bean class="com.oracle.auto.mobile.components.elements.webview.WebTextField">
+                <constructor-arg name="locator" value="${landing.page.email.address}"/>
+            </bean>
+        </property>
+        <property name="submitBtn">
+            <bean class="com.oracle.auto.mobile.components.elements.webview.WebButton">
+                <constructor-arg name="locator" value="${landing.page.submit.button}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="authorizeConfirmPage" class="com.oracle.auto.testapp.mobile.pages.AuthorizeConfirmPage" parent="mobileWebScreenBase"
+          scope="prototype">
+        <property name="authorizeTexts">
+            <bean class="com.oracle.auto.mobile.components.elements.webview.WebDiv">
+                <constructor-arg name="locator" value="${authorize.confirm.text.content}"/>
+            </bean>
+        </property>
+        <property name="continueUse">
+            <bean class="com.oracle.auto.mobile.components.elements.webview.WebDiv">
+                <constructor-arg name="locator" value="${authorize.confirm.is.continue}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="authorizeSuccessPage" class="com.oracle.auto.testapp.mobile.pages.AuthorizeSuccessPage" parent="mobileWebScreenBase"
+          scope="prototype">
+        <property name="authorizeSuccess">
+            <bean class="com.oracle.auto.mobile.components.elements.webview.WebDiv">
+                <constructor-arg name="locator" value="${authorize.success.text.content}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="messagePage" class="com.oracle.auto.testapp.mobile.pages.MessagePage" parent="mobileWebScreenBase"
+          scope="prototype">
+        <property name="readMore">
+            <bean class="com.oracle.auto.mobile.components.elements.webview.WebDiv">
+                <constructor-arg name="locator" value="${message.content.page.read.more}"/>
+            </bean>
+        </property>
+    </bean>
+
+</beans>

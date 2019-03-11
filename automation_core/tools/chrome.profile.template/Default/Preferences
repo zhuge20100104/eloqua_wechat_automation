@@ -1,0 +1,15 @@
+{
+   "download": {
+      "default_directory": "%DOWNLOAD.DIR.MAGIC.CODE%",
+      "directory_upgrade": true,
+      "extensions_to_open": "",
+      "prompt_for_download": false
+   },
+   
+   "profile": {
+   		"default_content_settings": {
+   		"multiple-automatic-downloads": 1,
+   		"popups": 1
+   		}
+   }  
+}

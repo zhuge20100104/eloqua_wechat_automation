@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="testAppPageBase" class="com.oracle.auto.testapp.web.ancestor.TestAppPageBase" abstract="true">
+    </bean>
+
+    <bean id="menuServicePage" class="com.oracle.auto.testapp.web.pages.MenuServicePages.MenuServicePage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="messageGallaryLink">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.gallary.link.sa}"/>
+            </bean>
+        </property>
+        <property name="messageLink">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.link.sa}"/>
+            </bean>
+        </property>
+        <property name="imagesLink">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.images.link}"/>
+            </bean>
+        </property>
+        <property name="autoReplyLinkServiceAccount">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.management.link.sa}"/>
+            </bean>
+        </property>
+        <property name="templateLinkServiceAccount">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.link.sa}"/>
+            </bean>
+        </property>
+        <property name="welcomeMsgLinkServiceAccount">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.link.sa}"/>
+            </bean>
+        </property>
+        <property name="welcomeMsgLinkSubscriptionAccount">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.link.subsription.service}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="messagesPage" class="com.oracle.auto.testapp.web.pages.MenuServicePages.MessagesPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="accountListBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.account.dropdown.btn}"/>
+            </bean>
+        </property>
+        <property name="accountList">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.account.list}"/>
+            </bean>
+        </property>
+        <property name="exceptedAccount">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.excepted.account}"/>
+            </bean>
+        </property>
+        <property name="newMsgBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.new.message.btn}"/>
+            </bean>
+        </property>
+        <property name="msgTitle">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.title}"/>
+            </bean>
+        </property>
+
+        <property name="editMsgBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.edit.message.btn}"/>
+            </bean>
+        </property>
+        <property name="previewMsgBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.preview.message.btn}"/>
+            </bean>
+        </property>
+        <property name="deleteMsgBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.delete.message.btn}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="messagesConPage" class="com.oracle.auto.testapp.web.pages.MenuServicePages.MessagesConPage"
+          parent="testAppPageBase" scope="prototype">
+        <property name="newArticle">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.new.article}"/>
+            </bean>
+        </property>
+        <property name="msgsList">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.listed.msgs.list}"/>
+            </bean>
+        </property>
+        <property name="articleItem">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.article.item}"/>
+            </bean>
+        </property>
+        <property name="msgTitle">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.title}"/>
+            </bean>
+        </property>
+
+        <property name="msgAuthor">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.author}"/>
+            </bean>
+        </property>
+        <property name="contentArea">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.content.area}"/>
+            </bean>
+        </property>
+        <property name="identifierBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.identifier.btn}"/>
+            </bean>
+        </property>
+        <property name="identifierList">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.identifier.list}"/>
+            </bean>
+        </property>
+        <property name="exceptedIdentifier">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.excepted.identifier}"/>
+            </bean>
+        </property>
+        <property name="saveBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.save.btn}"/>
+            </bean>
+        </property>
+        <property name="previewBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.preview.btn}"/>
+            </bean>
+        </property>
+        <property name="listedMsgs">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.listed.msgs}"/>
+            </bean>
+        </property>
+        <property name="exceptedMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.excepted.msg.title}"/>
+            </bean>
+        </property>
+        <property name="previewQR">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.preview.popup.qr}"/>
+            </bean>
+        </property>
+        <property name="previewClose">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.preview.popup.close}"/>
+            </bean>
+        </property>
+        <property name="deleteBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.excepted.msg.delete.btn}"/>
+            </bean>
+        </property>
+        <property name="confirmDeleteBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.confirm.delete.btn}"/>
+            </bean>
+        </property>
+        <property name="msgContentURL">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.content.url}"/>
+            </bean>
+        </property>
+        <property name="selectCover">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.page.select.cover}"/>
+            </bean>
+        </property>
+        <property name="richMedia">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.popup.page.rich.media}"/>
+            </bean>
+        </property>
+        <property name="okBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.message.popup.page.OK.btn}"/>
+            </bean>
+        </property>
+
+        <property name="commentsBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${service.account.panel.message.comments.btn}"/>
+            </bean>
+        </property>
+        <property name="allUsers">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${service.account.panel.message.all.users.btn}"/>
+            </bean>
+        </property>
+        <property name="weChatFollowers">
+            <bean class="com.oracle.auto.web.comp.html.HTMLCheckbox">
+                <constructor-arg name="locator" value="${service.account.panel.message.wechat.followers.btn}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+    <bean id="autoReplyManagementPage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.AutoReplyManagementPage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="configureBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.auto.reply.management.page.configure.btn}"/>
+            </bean>
+        </property>
+        <property name="searchInputBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.auto.reply.management.page.search.input.box}"/>
+            </bean>
+        </property>
+        <property name="listedMsgs">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.auto.reply.management.page.listed.msgs}"/>
+            </bean>
+        </property>
+        <property name="exceptedMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.auto.reply.management.page.excepted.msg.title}"/>
+            </bean>
+        </property>
+        <property name="RMEditBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.management.RM.edit.btn}"/>
+            </bean>
+        </property>
+        <property name="RMDeleteBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.management.RM.delete.btn}"/>
+            </bean>
+        </property>
+        <property name="RMViewQRBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.management.RM.view.btn}"/>
+            </bean>
+        </property>
+        <property name="confirmDeleteRMMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.auto.reply.management.RM.confirm.delete.btn}"/>
+            </bean>
+        </property>
+        <property name="closeQRCode">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.auto.reply.management.RM.QRCode.close.btn}"/>
+            </bean>
+        </property>
+        <property name="viewQRCode">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.auto.reply.management.RM.QRCode.view}"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="autoReplyChatManagementConPage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.AutoReplyChatManagementConPage" parent="testAppPageBase"
+          scope="prototype">
+    </bean>
+    <bean id="autoReplyManagementConPage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.AutoReplyManagementConPage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="autoReplyName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.management.name}"/>
+            </bean>
+        </property>
+        <property name="autoReplyKeyword">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.keyword.name}"/>
+            </bean>
+        </property>
+        <property name="richMediaMsgBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.rich.media.msg.btn}"/>
+            </bean>
+        </property>
+        <property name="chatBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.chat.msg.btn}"/>
+            </bean>
+        </property>
+        <property name="textMsgBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.text.msg.btn}"/>
+            </bean>
+        </property>
+        <property name="activityBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.activity.btn}"/>
+            </bean>
+        </property>
+        <property name="bypassBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.bypass.box}"/>
+            </bean>
+        </property>
+        <property name="richMedia">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.rich.media.item}"/>
+            </bean>
+        </property>
+        <property name="saveBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.save.btn}"/>
+            </bean>
+        </property>
+        <property name="keyword">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.keyword}"/>
+            </bean>
+        </property>
+
+        <property name="textMessageConfigurationBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.text.content.box}"/>
+            </bean>
+        </property>
+        <property name="insertFieldSearchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.text.insert.field.box}"/>
+            </bean>
+        </property>
+        <property name="exceptedInsertItem">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.text.insert.excepted.item}"/>
+            </bean>
+        </property>
+        <property name="listedInsertItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.auto.reply.text.insert.listed.items}"/>
+            </bean>
+        </property>
+        <property name="closeInsertField">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.auto.reply.text.insert.field.close.btn}"/>
+            </bean>
+        </property>
+
+
+    </bean>
+
+    <bean id="activityManagementConPage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.ActivityManagementConPage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="selectObjectArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.arrow}"/>
+            </bean>
+        </property>
+        <property name="objectSearchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.search.box}"/>
+            </bean>
+        </property>
+        <property name="listedObjects">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.listed.objects}"/>
+            </bean>
+        </property>
+        <property name="exceptedObject">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.excepted.object}"/>
+            </bean>
+        </property>
+        <property name="confirmObjectChangedBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.confirm.object.change}"/>
+            </bean>
+        </property>
+
+
+        <property name="addRuleBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.add.rule.btn}"/>
+            </bean>
+        </property>
+        <property name="addConditionBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.add.condition.btn}"/>
+            </bean>
+        </property>
+
+
+        <property name="conditionArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.condition.arrow}"/>
+            </bean>
+        </property>
+        <property name="conditionSearchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.condition.search.box}"/>
+            </bean>
+        </property>
+        <property name="listedConditions">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.condition.listed.conditions}"/>
+            </bean>
+        </property>
+        <property name="exceptedCondition">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.condition.excepted.condition}"/>
+            </bean>
+        </property>
+
+        <property name="symbolArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.condition.symbol.arrow}"/>
+            </bean>
+        </property>
+        <property name="listedSymbols">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.condition.symbol.listed.items}"/>
+            </bean>
+        </property>
+        <property name="exceptedSymbols">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.condition.symbol.excepted.item}"/>
+            </bean>
+        </property>
+        <property name="conditionValue">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.condition.value}"/>
+            </bean>
+        </property>
+
+        <property name="fieldUpdateBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.field.update.btn}"/>
+            </bean>
+        </property>
+        <property name="fieldArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.field.arrow}"/>
+            </bean>
+        </property>
+        <property name="updateFieldSearchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.field.search.box}"/>
+            </bean>
+        </property>
+        <property name="listedUpdateItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.field.listed.update.items}"/>
+            </bean>
+        </property>
+        <property name="exceptedField">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.field.excepted.field}"/>
+            </bean>
+        </property>
+        <property name="fieldValue">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.field.value}"/>
+            </bean>
+        </property>
+
+
+        <property name="ruleMsgSendBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.rule.msg.send.btn}"/>
+            </bean>
+        </property>
+        <property name="ruleMsgTypeArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.activity.object.rule.msg.send.arrow}"/>
+            </bean>
+        </property>
+        <property name="ruleListedMsgType">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.listed.msg.types}"/>
+            </bean>
+        </property>
+        <property name="ruleExceptedMsgType">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.excepted.msg.type}"/>
+            </bean>
+        </property>
+        <property name="ruleMsgEditBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.send.edit.btn}"/>
+            </bean>
+        </property>
+        <property name="ruleMsgTextInputBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.text.input.box}"/>
+            </bean>
+        </property>
+        <property name="ruleMsgTextSearchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.text.search.box}"/>
+            </bean>
+        </property>
+        <property name="ruleMsgTextExceptedInsertItem">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.text.excepted.insert.item}"/>
+            </bean>
+        </property>
+        <property name="ruleMsgTextListedInsertItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.text.listed.insert.items}"/>
+            </bean>
+        </property>
+
+        <property name="ruleRichMediaNews">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.rich.media.news}"/>
+            </bean>
+        </property>
+        <property name="mediaNewsSelected">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.rich.media.selectd}"/>
+            </bean>
+        </property>
+        <property name="ruleTemplateNews">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.template.news}"/>
+            </bean>
+        </property>
+
+        <property name="ruleMsgTextCloseBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.rule.msg.text.save.btn}"/>
+            </bean>
+        </property>
+
+
+        <property name="defaultRuleMsgSendBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.default.rule.msg.send.btn}"/>
+            </bean>
+        </property>
+        <property name="defaultRuleMsgTypeArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.default.rule.msg.send.arrow}"/>
+            </bean>
+        </property>
+        <property name="defaultRuleMsgEditBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.default.rule.msg.send.edit.btn}"/>
+            </bean>
+        </property>
+        <property name="defaultRuleListedMsgType">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.default.rule.msg.listed.msg.types}"/>
+            </bean>
+        </property>
+        <property name="defaultRuleExceptedMsgType">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.default.rule.msg.excepted.msg.type}"/>
+            </bean>
+        </property>
+
+        <property name="defaultRuleMsgTextInputBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.default.rule.msg.text.input.box}"/>
+            </bean>
+        </property>
+        <property name="defaultRuleMsgTextSearchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.default.rule.msg.text.search.box}"/>
+            </bean>
+        </property>
+        <property name="defaultRuleMsgTextExceptedInsertItem">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.default.rule.msg.text.excepted.insert.item}"/>
+            </bean>
+        </property>
+        <property name="defaultRuleMsgTextListedInsertItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.default.rule.msg.text.listed.insert.items}"/>
+            </bean>
+        </property>
+
+        <property name="defaultRuleMsgTextCloseBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.activity.object.default.rule.msg.text.save.btn}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="welcomeMessagePage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.WelcomeMessagePage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="editBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.welcome.msg.pag.edit.btn}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="templateMessageConPage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.TemplateMessageConPage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="templateBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.template.field.box}"/>
+            </bean>
+        </property>
+        <property name="templateBoxArrow">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.template.field.box.arrow}"/>
+            </bean>
+        </property>
+        <property name="templateSearchBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.template.search.box}"/>
+            </bean>
+        </property>
+        <property name="listedTemplates">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.listed.templates}"/>
+            </bean>
+        </property>
+        <property name="exceptedTemplate">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.excepted.template}"/>
+            </bean>
+        </property>
+        <property name="templateName">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.name.box}"/>
+            </bean>
+        </property>
+        <property name="contentUpper">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.content.box}"/>
+            </bean>
+        </property>
+        <property name="contentBottom">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.content.bottom}"/>
+            </bean>
+        </property>
+        <property name="appID">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.app.id}"/>
+            </bean>
+        </property>
+        <property name="pagePath">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.page.path}"/>
+            </bean>
+        </property>
+        <property name="content2Bottom">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.content2.bottom}"/>
+            </bean>
+        </property>
+        <property name="templateLink">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.link}"/>
+            </bean>
+        </property>
+
+        <property name="identifierBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.identifier.btn}"/>
+            </bean>
+        </property>
+
+        <property name="exceptedIdentifier">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.con.pag.msg.excepted.identifier}"/>
+            </bean>
+        </property>
+        <property name="first">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.first}"/>
+            </bean>
+        </property>
+        <property name="theme">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.theme}"/>
+            </bean>
+        </property>
+        <property name="time">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.time}"/>
+            </bean>
+        </property>
+        <property name="result">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.result}"/>
+            </bean>
+        </property>
+
+        <property name="firstColorBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.first.color.btn}"/>
+            </bean>
+        </property>
+        <property name="themeColorBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.theme.color.btn}"/>
+            </bean>
+        </property>
+        <property name="timeColorBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.time.color.btn}"/>
+            </bean>
+        </property>
+        <property name="resultColorBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.result.color.btn}"/>
+            </bean>
+        </property>
+        <property name="colorRed">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.color.red}"/>
+            </bean>
+        </property>
+        <property name="colorBlue">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.color.blue}"/>
+            </bean>
+        </property>
+        <property name="colorOrange">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.color.orange}"/>
+            </bean>
+        </property>
+        <property name="time2">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.time2}"/>
+            </bean>
+        </property>
+        <property name="ip">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.msg.ip}"/>
+            </bean>
+        </property>
+        <property name="previewBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.preview.btn}"/>
+            </bean>
+        </property>
+        <property name="QRCode">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.preview.btn}"/>
+            </bean>
+        </property>
+        <property name="closeQRCode">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.preview.btn}"/>
+            </bean>
+        </property>
+        <property name="saveBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.template.msg.con.pag.save.btn}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+
+    <bean id="templateMessagePage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.TemplateMessagePage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="editBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.edit.btn}"/>
+            </bean>
+        </property>
+        <property name="mapBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.map.btn}"/>
+            </bean>
+        </property>
+        <property name="searchInputBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.search.input.box}"/>
+            </bean>
+        </property>
+        <property name="listedMsgs">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.listed.msgs}"/>
+            </bean>
+        </property>
+        <property name="exceptedMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.excepted.msg}"/>
+            </bean>
+        </property>
+
+        <property name="msgTitle">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.msg.title}"/>
+            </bean>
+        </property>
+        <property name="deleteMsgBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.delete.btn}"/>
+            </bean>
+        </property>
+        <property name="previewMsgBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.preview.btn}"/>
+            </bean>
+        </property>
+        <property name="confirmDeleteBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.confirm.delete.btn}"/>
+            </bean>
+        </property>
+        <property name="viewQRCode">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.view.QR.code}"/>
+            </bean>
+        </property>
+        <property name="closeQRCode">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.template.msg.pag.close.QR.code}"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="toolkitPage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.ToolkitPage" parent="testAppPageBase"
+          scope="prototype">
+    </bean>
+    <bean id="menuManagementPage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.MenuManagementPage" parent="testAppPageBase"
+          scope="prototype">
+    </bean>
+    <bean id="menuManagementConPage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.MenuManagementConPage" parent="testAppPageBase"
+          scope="prototype">
+    </bean>
+    <bean id="welcomeMessageConPage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.WelcomeMessageConPage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="welcomeMsgEnableBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.con.pag.msg.enable.btn}"/>
+            </bean>
+        </property>
+        <property name="disabledStatus">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.welcome.msg.con.pag.msg.disable.status.flag}"/>
+            </bean>
+        </property>
+        <property name="enableStatus">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.con.pag.msg.enable.status}"/>
+            </bean>
+        </property>
+        <property name="disableStatus">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.welcome.msg.con.pag.msg.disable.status}"/>
+            </bean>
+        </property>
+        <property name="textTypeBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.con.pag.text.type.btn}"/>
+            </bean>
+        </property>
+        <property name="richMediaTypeBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.con.pag.rich.media.btn}"/>
+            </bean>
+        </property>
+        <property name="configurationArea">
+            <bean class="com.oracle.auto.web.comp.html.HTMLTextArea">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.welcome.msg.con.pag.configuration.area}"/>
+            </bean>
+        </property>
+        <property name="landingPageBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.con.pag.landing.page.box}"/>
+            </bean>
+        </property>
+        <property name="landingPageInsertBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.welcome.msg.con.pag.landing.page.insert.btn}"/>
+            </bean>
+        </property>
+        <property name="mediaNewsSelected">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.con.pag.media.selected}"/>
+            </bean>
+        </property>
+        <property name="richMediaItems">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.con.pag.rich.media.items}"/>
+            </bean>
+        </property>
+        <property name="saveBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.con.pag.save.btn}"/>
+            </bean>
+        </property>
+        <property name="welcomeContent">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.con.pag.welcome.content}"/>
+            </bean>
+        </property>
+        <property name="trackConfig">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.welcome.msg.con.pag.track.configuration}"/>
+            </bean>
+        </property>
+        <property name="displayText">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.welcome.msg.con.pag.track.display.text}"/>
+            </bean>
+        </property>
+        <property name="embeddedURL">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator"
+                                 value="${service.account.panel.welcome.msg.con.pag.track.embedded.url}"/>
+            </bean>
+        </property>
+        <property name="OKBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${service.account.panel.welcome.msg.con.pag.OK.btn}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+
+    <bean id="imagesPage"
+          class="com.oracle.auto.testapp.web.pages.MenuServicePages.ImagesPage" parent="testAppPageBase"
+          scope="prototype">
+        <property name="uploadBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${menu.service.image.msg.page.upload.btn}"/>
+            </bean>
+        </property>
+        <property name="deleteMsgBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${menu.service.image.msg.page.delete.btn}"/>
+    </bean>
+        </property>
+        <property name="previewMsgBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${menu.service.image.msg.page.preview.btn}"/>
+            </bean>
+        </property>
+        <property name="imageTitle">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${menu.service.image.msg.page.image.title}"/>
+            </bean>
+        </property>
+        <property name="imageTitles">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${menu.service.image.msg.page.image.titles}"/>
+            </bean>
+        </property>
+
+        <property name="confirmDeleteBtn">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${menu.service.image.msg.page.confirm.delete.btn}"/>
+            </bean>
+        </property>
+
+        <property name="previewedImage">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${menu.service.image.msg.page.previewed.image}"/>
+            </bean>
+        </property>
+        <property name="closePreviewedMsg">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator"
+                                 value="${menu.service.image.msg.page.previewed.image.close}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+
+</beans>

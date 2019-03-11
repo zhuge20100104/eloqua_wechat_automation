@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../apps/app_commons/autoqe.apps.commons.iml" filepath="$PROJECT_DIR$/../apps/app_commons/autoqe.apps.commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../automation_core/autoqe.core.iml" filepath="$PROJECT_DIR$/../automation_core/autoqe.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../apps/testapp/testapp_commons_core/testapp.commons.core.iml" filepath="$PROJECT_DIR$/../apps/testapp/testapp_commons_core/testapp.commons.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../apps/testapp/mobile/testapp_mobile_core/testapp.mobile.core.iml" filepath="$PROJECT_DIR$/../apps/testapp/mobile/testapp_mobile_core/testapp.mobile.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../apps/testapp/web/testapp_web_core/testapp.web.core.iml" filepath="$PROJECT_DIR$/../apps/testapp/web/testapp_web_core/testapp.web.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../apps/testapp/web/testapp_web_test/testapp.web.test.iml" filepath="$PROJECT_DIR$/../apps/testapp/web/testapp_web_test/testapp.web.test.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="homeTopNavigator" class="com.oracle.auto.testapp.web.components.homecomps.TopNavigator" scope="prototype">
+        <constructor-arg name="locator" value="${home.page.top.navigator}"/>
+        <property name="orchestrationMenu" ref="orchestration"/>
+        <property name="audienceMenu" ref="audience"/>
+        <property name="assetMenu" ref="asset"/>
+
+        <property name="settings">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.top.navigator.top.settings}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="orchestration" class="com.oracle.auto.testapp.web.components.homecomps.Orchestration" scope="prototype">
+        <property name="orchestration">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.top.navigator.orchestration}"/>
+            </bean>
+        </property>
+        <property name="campaigns">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.top.navigator.orchestration.campaigns}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+
+    <bean id="asset" class="com.oracle.auto.testapp.web.components.homecomps.Asset" scope="prototype">
+        <property name="assets">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.top.navigator.assets}"/>
+            </bean>
+        </property>
+
+        <property name="emails">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.top.navigator.assets.emails}"/>
+            </bean>
+        </property>
+
+        <property name="landingpages">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.top.navigator.assets.landing.pages}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+    <bean id="audience" class="com.oracle.auto.testapp.web.components.homecomps.Audience" scope="prototype">
+        <property name="audience">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.top.navigator.audience}"/>
+            </bean>
+        </property>
+        <property name="contacts">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${home.page.top.navigator.audience.contacts}"/>
+            </bean>
+        </property>
+
+    </bean>
+
+    <bean id="leftNavigator" class="com.oracle.auto.testapp.web.components.campaignscomps.LeftNavigator" scope="prototype">
+        <property name="searchInputBox">
+            <bean class="com.oracle.auto.web.comp.html.HTMLInput">
+                <constructor-arg name="locator" value="${campaigns.search.campaign.by.name.box}"/>
+            </bean>
+        </property>
+        <property name="exceptedCampaing">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaigns.search.campaign.excepted.result}"/>
+            </bean>
+        </property>
+        <property name="listedCampaigns">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaigns.search.campaign.listed.results}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="topOptions" class="com.oracle.auto.testapp.web.components.campaignscomps.TopOptions" scope="prototype">
+        <property name="createMSCampaign">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${campaigns.create.multiple.step.campaign}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="platformExtensions" class="com.oracle.auto.testapp.web.components.settingcomps.PlatformExtensions"
+          scope="prototype">
+        <property name="apps">
+            <bean class="com.oracle.auto.web.comp.html.HTMLDiv">
+                <constructor-arg name="locator" value="${setting.page.platform.extensions.apps}"/>
+            </bean>
+        </property>
+    </bean>
+
+</beans>
